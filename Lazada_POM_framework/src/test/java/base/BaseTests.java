@@ -10,7 +10,7 @@ import pages.HomePage;
 
 public class BaseTests {
 
-    private WebDriver driver;
+    public WebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass

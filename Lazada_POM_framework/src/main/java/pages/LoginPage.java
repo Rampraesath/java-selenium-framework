@@ -20,8 +20,8 @@ public class LoginPage {
     private By usernameField = By.xpath("//input[@placeholder='Please enter your Phone Number or Email']");
     private By passwordField = By.xpath("//input[@placeholder='Please enter your password']");
     private By submitButton = By.xpath("//button[@type='submit']");
+    private By errorField = By.xpath("//span[@class='nc-lang-cnt']");
 
-//    private By slideButton = By.xpath("//span[@id='nc_6_n1z']");
 
     public void setUserName(String username) {
         driver.findElement(usernameField).sendKeys(username);
@@ -46,6 +46,11 @@ public class LoginPage {
         }
         
         return new HomePage(driver);
+    }
+
+    public String getErrorMessage(){
+        return driver.findElement(errorField).getText();
+
     }
 
 }
